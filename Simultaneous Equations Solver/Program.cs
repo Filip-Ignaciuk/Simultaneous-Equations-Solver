@@ -50,20 +50,48 @@ namespace Simultaneous_Equations_Solver
                 part1 = _equation1.GetUntilOrEmpty("+");
                 Console.WriteLine(part1);
 
-
                 string _part2 = _equation1.GetUntilOrEmpty("=");
                 part2 = _part2.Replace(part1 + "+", "");
                 Console.WriteLine(part2);
-
-
-
+ 
                 part3 = _equation1.Substring(_equation1.IndexOf("="));
                 part3 = part3.Replace("=", "");
                 Console.WriteLine(part3);
 
+                part4 = _equation2.GetUntilOrEmpty("+");
+                Console.WriteLine(part4);
+
+                string _part5 = _equation2.GetUntilOrEmpty("=");
+                part5 = _part5.Replace(part4 + "+", "");
+                Console.WriteLine(part5);
+
                 part6 = _equation2.Substring(_equation2.IndexOf("="));
                 part6 = part6.Replace("=", "");
                 Console.WriteLine(part6);
+
+                if (part1 == part4)
+                {
+                    double awnser = double.Parse(part5) - double.Parse(part2);
+                    double awnser2 = double.Parse(part6) - double.Parse(part3);
+                    if (awnser2 != 1)
+                    {
+                        double final = awnser / awnser2;
+                        Console.WriteLine(final.ToString());
+                    }
+                    else
+                    {
+                        Console.WriteLine(_equation1.);
+                    }
+                }
+                else if (part2 == part5)
+                {
+                    double awnser = double.Parse(part4) - double.Parse(part1);
+                    double awnser2 = double.Parse(part6) - double.Parse(part3);
+                }
+                else
+                {
+
+                }
             }
             else if (_equation1.Contains(" - ") && _equation2.Contains(" - "))
             {
